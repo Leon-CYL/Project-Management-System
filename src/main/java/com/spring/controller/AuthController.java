@@ -70,7 +70,7 @@ public class AuthController {
         response.setMessage("Success");
         response.setJwt(jwt);
 
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     private Authentication authenticate(String email, String password) throws Exception {
