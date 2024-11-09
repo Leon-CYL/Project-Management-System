@@ -71,6 +71,7 @@ public class ProjectServiceImpl implements ProjectService {
         return project.get();
     }
 
+
     @Override
     public void deleteProject(Long projectId, Long userId) throws Exception {
         projectRepository.deleteById(projectId);
@@ -125,6 +126,7 @@ public class ProjectServiceImpl implements ProjectService {
     public Chat getChatByProjectId(Long projectId) throws Exception {
         return getProjectById(projectId).getChat();
     }
+
 
     @Override
     public List<Project> searchProjects(String keyword, User user) throws Exception {

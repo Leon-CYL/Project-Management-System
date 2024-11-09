@@ -34,6 +34,7 @@ public class ProjectController {
         return new ResponseEntity<>(projectService.getProjectsByTeam(user, category, tag), HttpStatus.OK);
     }
 
+
     @GetMapping("/{projectId}")
     public ResponseEntity<Project> getProjectsById(
             @PathVariable Long projectId,
@@ -43,6 +44,7 @@ public class ProjectController {
         userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.getProjectById(projectId), HttpStatus.OK);
     }
+
 
     @PostMapping()
     public ResponseEntity<Project> createProjects(
@@ -54,6 +56,7 @@ public class ProjectController {
         return new ResponseEntity<>(projectService.createProject(project, user), HttpStatus.CREATED);
     }
 
+
     @PatchMapping("/{projectId}")
     public ResponseEntity<Project> updateProjects(
             @RequestBody Project project,
@@ -64,6 +67,7 @@ public class ProjectController {
         userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.updateProject(projectId, project), HttpStatus.OK);
     }
+
 
     @DeleteMapping("/{projectId}")
     public ResponseEntity<MessageResponse> deleteProjects(
@@ -79,6 +83,7 @@ public class ProjectController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+
     @GetMapping("/search")
     public ResponseEntity<List<Project>> searchProjects(
             @RequestParam(required = false) String keyword,
@@ -88,6 +93,7 @@ public class ProjectController {
         User user = userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.searchProjects(keyword, user), HttpStatus.OK);
     }
+
 
     @GetMapping("/{projectId}/chat")
     public ResponseEntity<Chat> getChatProjectsById(
