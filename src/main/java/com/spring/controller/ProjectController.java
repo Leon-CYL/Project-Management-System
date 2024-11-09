@@ -1,9 +1,12 @@
 package com.spring.controller;
 
 import com.spring.model.Chat;
+import com.spring.model.Invitation;
 import com.spring.model.Project;
 import com.spring.model.User;
+import com.spring.request.InviteRequest;
 import com.spring.response.MessageResponse;
+import com.spring.service.InvitationService;
 import com.spring.service.ProjectService;
 import com.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class ProjectController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private InvitationService invitationService;
 
 
     @GetMapping()
@@ -103,5 +109,28 @@ public class ProjectController {
 
         userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.getChatByProjectId(projectId), HttpStatus.OK);
+    }
+
+
+    @PostMapping("/invite")
+    public ResponseEntity<MessageResponse> inviteProject(
+            @RequestBody InviteRequest req,
+            @RequestHeader("Authorization") String jwt
+    ) throws Exception {
+        userService.findUserProfileByJwt(jwt);
+        invitationService.sendInvitation(req.getEmail(), req.getProjectId());
+        return new ResponseEntity<>(new MessageResponse("Invitation sent successfully!"), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/accept_invitation")
+    public ResponseEntity<Invitation> acceptInvitationProject(
+            @RequestParam String token,
+            @RequestHeader("Authorization") String jwt
+    ) throws Exception {
+        User user = userService.findUserProfileByJwt(jwt);
+        Invitation invitation = invitationService.acceptInvitation(token, user.getId());
+        projectService.addUserToProject(invitation.getProjectId(), user.getId());
+        return new ResponseEntity<>(invitation, HttpStatus.ACCEPTED);
     }
 }
