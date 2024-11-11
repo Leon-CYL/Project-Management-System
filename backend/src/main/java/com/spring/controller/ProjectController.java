@@ -35,7 +35,6 @@ public class ProjectController {
             @RequestParam(required = false) String tag,
             @RequestHeader("Authorization") String jwt
     ) throws Exception {
-
         User user = userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.getProjectsByTeam(user, category, tag), HttpStatus.OK);
     }
@@ -43,10 +42,9 @@ public class ProjectController {
 
     @GetMapping("/{projectId}")
     public ResponseEntity<Project> getProjectsById(
-            @PathVariable Long projectId,
+            @PathVariable("projectId") Long projectId,
             @RequestHeader("Authorization") String jwt
     ) throws Exception {
-
         userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.getProjectById(projectId), HttpStatus.OK);
     }
@@ -57,7 +55,6 @@ public class ProjectController {
             @RequestBody Project project,
             @RequestHeader("Authorization") String jwt
     ) throws Exception {
-
         User user = userService.findUserProfileByJwt(jwt);
         return new ResponseEntity<>(projectService.createProject(project, user), HttpStatus.CREATED);
     }
@@ -67,7 +64,7 @@ public class ProjectController {
     public ResponseEntity<Project> updateProjects(
             @RequestBody Project project,
             @RequestHeader("Authorization") String jwt,
-            @PathVariable Long projectId
+            @PathVariable("projectId") Long projectId
     ) throws Exception {
 
         userService.findUserProfileByJwt(jwt);
@@ -78,7 +75,7 @@ public class ProjectController {
     @DeleteMapping("/{projectId}")
     public ResponseEntity<MessageResponse> deleteProjects(
             @RequestHeader("Authorization") String jwt,
-            @PathVariable Long projectId
+            @PathVariable("projectId") Long projectId
     ) throws Exception {
 
         User user = userService.findUserProfileByJwt(jwt);
@@ -103,7 +100,7 @@ public class ProjectController {
 
     @GetMapping("/{projectId}/chat")
     public ResponseEntity<Chat> getChatProjectsById(
-            @PathVariable Long projectId,
+            @PathVariable("projectId") Long projectId,
             @RequestHeader("Authorization") String jwt
     ) throws Exception {
 

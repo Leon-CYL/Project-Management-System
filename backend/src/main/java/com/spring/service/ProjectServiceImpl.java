@@ -33,14 +33,17 @@ public class ProjectServiceImpl implements ProjectService {
         newProject.setDescription(project.getDescription());
         newProject.getTeam().add(user);
 
-        //Create Chat
-        Chat chat = new Chat();
-        chat.setProject(newProject);
-        Chat projectChat = chatService.createChat(chat);
-        newProject.setChat(projectChat);
+        Project savedProject = projectRepository.save(newProject);
 
-        return projectRepository.save(newProject);
+        Chat chat = new Chat();
+        chat.setProject(savedProject);
+        Chat projectChat = chatService.createChat(chat);
+
+        savedProject.setChat(projectChat);
+
+        return projectRepository.save(savedProject);
     }
+
 
 
     @Override
