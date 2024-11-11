@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/issue")
+@RequestMapping("/api/issues")
 public class IssueController {
     @Autowired
     private IssueService issueService;
@@ -25,13 +25,17 @@ public class IssueController {
 
 
     @GetMapping("/{issueId}")
-    public ResponseEntity<Issue> getIssue(@PathVariable("issueId") Long issueId) throws Exception {
+    public ResponseEntity<Issue> getIssue(
+            @PathVariable("issueId") Long issueId
+    ) throws Exception {
         return new ResponseEntity<>(issueService.getIssueById(issueId), HttpStatus.OK);
     }
 
 
     @GetMapping("/project/{projectId}")
-    public ResponseEntity<List<Issue>> getIssueByProject(@PathVariable("projectId") Long projectId) throws Exception {
+    public ResponseEntity<List<Issue>> getIssueByProject(
+            @PathVariable("projectId") Long projectId
+    ) throws Exception {
         return new ResponseEntity<>(issueService.getIssuesByProjectId(projectId), HttpStatus.OK);
     }
 
@@ -76,16 +80,16 @@ public class IssueController {
 
     @PutMapping("/{issueId}/assignee/{userId}")
     public ResponseEntity<Issue> addUserToIssue(
-            @PathVariable Long issueId,
-            @PathVariable Long userId
+            @PathVariable("issueId") Long issueId,
+            @PathVariable("userId") Long userId
     ) throws Exception {
-        return new ResponseEntity<>(issueService.addUserToIssue(userId, issueId), HttpStatus.OK);
+        return new ResponseEntity<>(issueService.addUserToIssue(issueId, userId), HttpStatus.OK);
     }
 
 
     @PutMapping("/{issueId}/state/{status}")
     public ResponseEntity<Issue> updateIssueState(
-            @PathVariable Long issueId,
+            @PathVariable("issueId") Long issueId,
             @PathVariable String status
     ) throws Exception {
         return new ResponseEntity<>(issueService.updateIssueStatus(issueId, status), HttpStatus.OK);

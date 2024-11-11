@@ -5,66 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97c4e960-a34b-4841-960b-fd0247a43692" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/ChatServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/ProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/DTO/IssueDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/DTO/IssueDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/ProjectManagementSystemApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/ProjectManagementSystemApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/config/JwtProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/config/JwtProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/config/JwtTokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/config/JwtTokenValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/IssueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/IssueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/IssueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/IssueController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/ProjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/SubscriptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/SubscriptionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Chat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Invitation.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Invitation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Issue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/PlanType.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/PlanType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Subscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Subscription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/CommentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/InvitationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/InvitationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/IssueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/IssueRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/MessageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/MessageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/ProjectRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/SubscriptionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/SubscriptionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/request/CommentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/request/CommentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/request/InviteRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/request/InviteRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/request/IssueRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/request/IssueRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/request/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/request/MessageRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/request/MessageRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/response/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/response/AuthResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/response/MessageResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/response/MessageResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ChatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ChatService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ChatServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ChatServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/CommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/EmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/EmailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/InvitationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/InvitationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/InvitationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/InvitationServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/MessageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/MessageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ProjectService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ProjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/ProjectServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/SubscriptionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/SubscriptionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/SubscriptionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/SubscriptionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserDetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserDetailServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +176,7 @@
       <updated>1730956647236</updated>
       <workItem from="1730956648307" duration="11634000" />
       <workItem from="1731112441475" duration="33550000" />
-      <workItem from="1731280483531" duration="4954000" />
+      <workItem from="1731280483531" duration="7022000" />
     </task>
     <servers />
   </component>
