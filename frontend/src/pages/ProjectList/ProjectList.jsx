@@ -10,29 +10,29 @@ import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import ProjectCard from "../Project/ProjectCard";
 
+export const tags = [
+  "All",
+  "React",
+  "Next.js",
+  "Angular",
+  "Spring Boot",
+  "Flask",
+  "Django",
+  "MySQL",
+  "MongoDB",
+  "PostgreDB",
+  "Python",
+  "Java",
+  "C/C++",
+  "",
+];
+
 const ProjectList = () => {
   const [keyword, setKeyword] = useState("");
 
   const handleSearchChange = (e) => {
     setKeyword(e.target.value);
   };
-
-  const tags = [
-    "All",
-    "React",
-    "Next.js",
-    "Angular",
-    "Spring Boot",
-    "Flask",
-    "Django",
-    "MySQL",
-    "MongoDB",
-    "PostgreDB",
-    "Python",
-    "Java",
-    "C/C++",
-    "",
-  ];
 
   const handleFilterChange = (section, value) => {
     console.log("value", value, section);
