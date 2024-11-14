@@ -3,9 +3,23 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useParams } from "react-router-dom";
 import CreateCommentForm from "./CreateCommentForm";
 import CommentCard from "./CommentCard";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 const IssueDetails = () => {
   const { projectId, issueId } = useParams();
+
+  const handleUpdateIssueStatus = (status) => {
+    console.log(status);
+  };
+
   return (
     <div className="px-20 py-8 text-gray-400">
       <div className="flex justify-between border p-10 rounded-lg">
@@ -45,6 +59,60 @@ const IssueDetails = () => {
             </div>
           </div>
         </ScrollArea>
+        <div className="w-full lg:w-[30%] space-y-2">
+          <Select onValueChange={handleUpdateIssueStatus}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="To Do" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="pending">Pending</SelectItem>
+              <SelectItem value="in_progress">In Progress</SelectItem>
+              <SelectItem value="done">Done</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <div className="border rounded-lg">
+            <p className="border-b py-3 px-5">Details</p>
+            <div className="p-5">
+              <div className="space-y-7">
+                <div className="flex items-center gap-10">
+                  <p className="w-[7rem]">Assignee</p>
+                  <div className="flex items-center gap-3">
+                    <Avatar className="h-8 w-8 text-xs">
+                      <AvatarFallback>L</AvatarFallback>
+                    </Avatar>
+                    <p>Leon</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-10">
+                  <p className="w-[7rem]">Labels</p>
+                  <p>None</p>
+                </div>
+
+                <div className="flex items-center gap-10">
+                  <p className="w-[7rem]">Status</p>
+                  <Badge>In Progress</Badge>
+                </div>
+
+                <div className="flex items-center gap-10">
+                  <p className="w-[7rem]">Release</p>
+                  <p>11-14-2024</p>
+                </div>
+
+                <div className="flex items-center gap-10">
+                  <p className="w-[7rem]">Reporter</p>
+                  <div className="flex items-center gap-3">
+                    <Avatar className="h-8 w-8 text-xs">
+                      <AvatarFallback>J</AvatarFallback>
+                    </Avatar>
+                    <p>Jason</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
