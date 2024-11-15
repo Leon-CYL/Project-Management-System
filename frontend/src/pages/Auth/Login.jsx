@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
 import {
   Form,
   FormControl,
@@ -10,19 +9,23 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 
-const InviteUserForm = () => {
+const Login = () => {
   const form = useForm({
     defaultValues: {
       email: "",
+      password: "",
     },
   });
 
   const onSubmit = (data) => {
-    console.log("Create Invitation Data", data);
+    console.log("Create Account Data", data);
   };
 
   return (
     <div>
+      <div>
+        <h1>Log In</h1>
+      </div>
       <Form {...form}>
         <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -35,7 +38,7 @@ const InviteUserForm = () => {
                     {...field}
                     type="text"
                     className="border w-full border-gray-700 py-5 px-5"
-                    placeholder="User email"
+                    placeholder="Email"
                   />
                 </FormControl>
                 <FormMessage />
@@ -43,15 +46,31 @@ const InviteUserForm = () => {
             )}
           />
 
-          <DialogClose>
-            <Button type="submit" className="w-full my-5">
-              Invite User
-            </Button>
-          </DialogClose>
+          <FormField
+            control={form.control}
+            name="Password"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="text"
+                    className="border w-full border-gray-700 py-5 px-5"
+                    placeholder="password"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <Button type="submit" className="w-full my-5">
+            Log In
+          </Button>
         </form>
       </Form>
     </div>
   );
 };
 
-export default InviteUserForm;
+export default Login;
