@@ -9,9 +9,17 @@ import {
 import { DotFilledIcon, DotsVerticalIcon } from "@radix-ui/react-icons";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { deleteProject } from "@/Redux/Project/Action";
 
-const ProjectCard = () => {
+const ProjectCard = ({ item }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteProject(item.id));
+  };
+
   return (
     <Card className="p-5 w-full lg:max-w-3xl">
       <div className="space-y-5">
@@ -22,10 +30,10 @@ const ProjectCard = () => {
                 onClick={() => navigate("/project/3")}
                 className="cursor-pointer font-bold text-lg"
               >
-                Create Ecommerce Project
+                {item.name}
               </h1>
               <DotFilledIcon />
-              <p className="text-sm text-gray-400">Fullstack</p>
+              <p className="text-sm text-gray-400">{item.category}</p>
             </div>
             <div>
               <DropdownMenu>
@@ -36,19 +44,19 @@ const ProjectCard = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>Update</DropdownMenuItem>
-                  <DropdownMenuItem>Delete</DropdownMenuItem>
+                  <DropdownMenuItem onClick={handleDelete}>
+                    Delete
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
           </div>
-          <p className="text-sm text-gray-500">
-            This is the project description.
-          </p>
+          <p className="text-sm text-gray-500">{item.description}</p>
         </div>
         <div className="flex flex-wrap gap-2 items-center">
-          {[1, 1, 1, 1].map((item) => (
+          {item.tags.map((tag) => (
             <Badge key={item} variant="outline">
-              {"Frontend"}
+              {tag}
             </Badge>
           ))}
         </div>

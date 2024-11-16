@@ -36,7 +36,7 @@ const CreateProjectForm = () => {
       name: "",
       description: "",
       category: "",
-      tags: ["Javascript", "React"],
+      tags: [],
     },
   });
 
@@ -97,16 +97,14 @@ const CreateProjectForm = () => {
                     onValueChange={(value) => {
                       field.onChange(value);
                     }}
-
-                    //className="border w-full border-gray-700 py-5 px-5"
                   >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Category" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="fullstack">Fullstack</SelectItem>
-                      <SelectItem value="frontend">Frontend</SelectItem>
-                      <SelectItem value="backend">Backend</SelectItem>
+                      <SelectItem value="Fullstack">Fullstack</SelectItem>
+                      <SelectItem value="Frontend">Frontend</SelectItem>
+                      <SelectItem value="Backend">Backend</SelectItem>
                     </SelectContent>
                   </Select>
                 </FormControl>
@@ -125,25 +123,22 @@ const CreateProjectForm = () => {
                     onValueChange={(value) => {
                       handleTagsChange(value);
                     }}
-
-                    //className="border w-full border-gray-700 py-5 px-5"
                   >
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Tags" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All</SelectItem>
-                      <SelectItem value="react">React</SelectItem>
-                      <SelectItem value="angular">Angular</SelectItem>
-                      <SelectItem value="spring boot">Spring Boot</SelectItem>
-                      <SelectItem value="flask">Flask</SelectItem>
-                      <SelectItem value="django">Django</SelectItem>
-                      <SelectItem value="mySQL">MySQL</SelectItem>
-                      <SelectItem value="mongoDB">MongoDB</SelectItem>
-                      <SelectItem value="postgreDB">PostgreDB</SelectItem>
-                      <SelectItem value="python">Python</SelectItem>
-                      <SelectItem value="java">Java</SelectItem>
-                      <SelectItem value="c/c++">C/C++</SelectItem>
+                      <SelectItem value="React">React</SelectItem>
+                      <SelectItem value="Angular">Angular</SelectItem>
+                      <SelectItem value="Spring boot">Spring Boot</SelectItem>
+                      <SelectItem value="Flask">Flask</SelectItem>
+                      <SelectItem value="Django">Django</SelectItem>
+                      <SelectItem value="MySQL">MySQL</SelectItem>
+                      <SelectItem value="MongoDB">MongoDB</SelectItem>
+                      <SelectItem value="PostgreDB">PostgreDB</SelectItem>
+                      <SelectItem value="Python">Python</SelectItem>
+                      <SelectItem value="Java">Java</SelectItem>
+                      <SelectItem value="C/C++">C/C++</SelectItem>
                     </SelectContent>
                   </Select>
                 </FormControl>

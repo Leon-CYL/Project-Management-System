@@ -60,9 +60,9 @@ export const searchProjects = (keyword) => async (dispatch) => {
 export const createProject = (projectData) => async (dispatch) => {
   dispatch({ type: CREATE_PROJECT_REQUEST });
   try {
-    const data = await api.post(`/api/projects`, projectData);
-    console.log("Create projects", data);
-    dispatch({ type: CREATE_PROJECT_SUCCESS, projects: data });
+    const response = await api.post(`/api/projects`, projectData);
+    console.log("Create projects", response.data);
+    dispatch({ type: CREATE_PROJECT_SUCCESS, project: response.data });
   } catch (error) {
     dispatch({
       type: CREATE_PROJECT_FAILURE,
@@ -77,7 +77,7 @@ export const fetchProjectById = (id) => async (dispatch) => {
   try {
     const data = await api.get(`/api/projects/${id}`);
     console.log("Fetch project By ID", data);
-    dispatch({ type: FETCH_PROJECT_BY_ID_SUCCESS, projects: data });
+    dispatch({ type: FETCH_PROJECT_BY_ID_SUCCESS, projectDetails: data });
   } catch (error) {
     dispatch({
       type: FETCH_PROJECT_BY_ID_FAILURE,
@@ -87,12 +87,12 @@ export const fetchProjectById = (id) => async (dispatch) => {
   }
 };
 
-export const deleteProjectById = (projectId) => async (dispatch) => {
+export const deleteProject = (projectId) => async (dispatch) => {
   dispatch({ type: DELETE_PROJECT_REQUEST });
   try {
-    const data = await api.delete(`/api/projects/${projectId}]`);
+    const data = await api.delete(`/api/projects/${projectId}`);
     console.log("Delete projects", data);
-    dispatch({ type: DELETE_PROJECT_SUCCESS, projects: data });
+    dispatch({ type: DELETE_PROJECT_SUCCESS, projectId });
   } catch (error) {
     dispatch({
       type: DELETE_PROJECT_FAILURE,
