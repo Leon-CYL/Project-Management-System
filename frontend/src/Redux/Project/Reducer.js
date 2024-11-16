@@ -10,7 +10,7 @@ import {
   FETCH_PROJECT_SUCCESS,
   INVITE_TO_REQUEST,
   SEARCH_PROJECT_SUCCESS,
-} from "./actionType";
+} from "./ActionType";
 
 const initialState = {
   projects: [],
@@ -77,7 +77,7 @@ const projectReducer = (state = initialState, action) => {
       };
 
     default:
-      state;
+      return state;
   }
 };
 export default projectReducer;

@@ -1,5 +1,6 @@
 import { API_BASE_URL } from "@/config/api";
 import {
+  GET_USER_FAILURE,
   GET_USER_REQUEST,
   GET_USER_SUCCESS,
   LOGIN_REQUEST,
@@ -52,6 +53,10 @@ export const getUser = () => async (dispatch) => {
     }
     console.log("get user success", data);
   } catch (error) {
+    dispatch({
+      type: GET_USER_FAILURE,
+      error: error.message,
+    });
     console.log(error);
   }
 };
