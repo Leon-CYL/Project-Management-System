@@ -15,10 +15,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { createProject } from "@/Redux/Project/Action";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 const CreateProjectForm = () => {
+  const dispatch = useDispatch();
   const handleTagsChange = (newValue) => {
     const currentTags = form.getValues("tags");
     const updatedTags = currentTags.includes(newValue)
@@ -38,6 +41,7 @@ const CreateProjectForm = () => {
   });
 
   const onSubmit = (data) => {
+    dispatch(createProject(data));
     console.log("Create Project Data", data);
   };
 

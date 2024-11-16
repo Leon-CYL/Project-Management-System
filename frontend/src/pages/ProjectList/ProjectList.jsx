@@ -9,6 +9,7 @@ import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import ProjectCard from "../Project/ProjectCard";
+import { useSelector } from "react-redux";
 
 export const tags = [
   "All",
@@ -29,7 +30,7 @@ export const tags = [
 
 const ProjectList = () => {
   const [keyword, setKeyword] = useState("");
-
+  const { project } = useSelector((store) => store);
   const handleSearchChange = (e) => {
     setKeyword(e.target.value);
   };
@@ -126,7 +127,7 @@ const ProjectList = () => {
             <div className="space-y-5 min-h-[74vh]">
               {keyword
                 ? [1, 1, 1].map((item) => <ProjectCard key={item} />)
-                : [1, 1, 1, 1].map((item) => <ProjectCard key={item} />)}
+                : project.projects.map((item) => <ProjectCard key={item} />)}
             </div>
           </div>
         </section>

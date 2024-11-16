@@ -7,9 +7,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { register } from "@/Redux/Auth/Action";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 const Signup = () => {
+  const dispatch = useDispatch();
+
   const form = useForm({
     defaultValues: {
       email: "",
@@ -19,6 +23,7 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
+    dispatch(register(data));
     console.log("Create Account Data", data);
   };
 
@@ -31,7 +36,7 @@ const Signup = () => {
         <form className="space-y-5" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
             control={form.control}
-            name="fullname"
+            name="fullName"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -67,7 +72,7 @@ const Signup = () => {
 
           <FormField
             control={form.control}
-            name="Password"
+            name="password"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
@@ -75,7 +80,7 @@ const Signup = () => {
                     {...field}
                     type="text"
                     className="border w-full border-gray-700 py-5 px-5"
-                    placeholder="password"
+                    placeholder="Password"
                   />
                 </FormControl>
                 <FormMessage />
