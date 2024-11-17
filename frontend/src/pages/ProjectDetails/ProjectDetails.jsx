@@ -13,9 +13,19 @@ import { PlusIcon } from "@radix-ui/react-icons";
 import InviteUserForm from "./InviteUserForm";
 import IssueList from "./IssueList";
 import ChatBox from "./ChatBox";
+import { useEffect } from "react";
+import { fetchProjectById } from "@/Redux/Project/Action";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 const ProjectDetails = () => {
   const handleProjectInvitation = () => {};
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { project } = useSelector((store) => store);
+  useEffect(() => {
+    dispatch(fetchProjectById(id));
+  }, [id]);
   return (
     <>
       <div className="mt-5 lg:px-10">
@@ -23,7 +33,7 @@ const ProjectDetails = () => {
           <ScrollArea className="h-screen lg:w-[69%] pr-2">
             <div className="text-gray-400 pb-10 w-full">
               <h1 className="text-lg font-semibold pb-5">
-                Create Ecommerce Peoject Using React
+                {project.projectDetails?.name}
               </h1>
 
               <div className="space-y-5 pb-10 text-sm">

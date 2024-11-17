@@ -27,7 +27,7 @@ const ProjectCard = ({ item }) => {
           <div className="flex justify-between">
             <div className="flex items-center gap-5">
               <h1
-                onClick={() => navigate("/project/3")}
+                onClick={() => navigate("/project/" + item.id)}
                 className="cursor-pointer font-bold text-lg"
               >
                 {item.name}
