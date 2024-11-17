@@ -8,10 +8,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { createComment, fetchComments } from "@/Redux/Comment/Action";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 
-const CreateCommentForm = () => {
+const CreateCommentForm = ({ issueId }) => {
   const dispatch = useDispatch();
   const form = useForm({
     defaultValues: {
@@ -20,6 +21,7 @@ const CreateCommentForm = () => {
   });
 
   const onSubmit = (data) => {
+    dispatch(createComment({ content: data.content, issueId }));
     console.log("Create Comment Data", data);
   };
 

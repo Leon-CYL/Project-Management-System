@@ -5,11 +5,14 @@ export const createComment = (commentData) => {
   return async (dispatch) => {
     dispatch({ type: actionTypes.CREATE_COMMENT_REQUEST });
     try {
+      console.log("Comment data:", commentData);
       const response = await api.post(`api/comments`, commentData);
       dispatch({
         type: actionTypes.CREATE_COMMENT_SUCCESS,
         comment: response.data,
       });
+      console.log("Create Comment", response.data);
+      dispatch(fetchComments(commentData.issueId));
     } catch (error) {
       dispatch({
         type: actionTypes.CREATE_COMMENT_FAILURE,
@@ -39,15 +42,16 @@ export const deleteComment = (commentId) => {
   };
 };
 
-export const fetchComment = (issueId) => {
+export const fetchComments = (issueId) => {
   return async (dispatch) => {
     dispatch({ type: actionTypes.FETCH_COMMENTS_REQUEST });
     try {
-      const response = await api.post(`api/comments/${issueId}`);
+      const response = await api.get(`api/comments/${issueId}`);
       dispatch({
         type: actionTypes.FETCH_COMMENTS_SUCCESS,
-        comment: response.data,
+        comments: response.data,
       });
+      console.log("Fetch Comments", response.data);
     } catch (error) {
       dispatch({
         type: actionTypes.FETCH_COMMENTS_FAILURE,
