@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router";
 
-const CreateIssueForm = () => {
+const CreateIssueForm = ({ status }) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const form = useForm({
@@ -30,6 +30,7 @@ const CreateIssueForm = () => {
         title: data.issueName,
         description: data.description,
         projectId: id,
+        status,
       })
     );
     console.log("Create Invitation Data", data);

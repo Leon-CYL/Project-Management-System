@@ -14,7 +14,7 @@ const IssueReducer = (state = initialState, action) => {
     case actionTypes.CREATE_ISSUE_REQUEST:
     case actionTypes.DELETE_ISSUE_REQUEST:
     case actionTypes.FETCH_ISSUES_REQUEST:
-    case actionTypes.UPDATE_ISSUE_STATE_REQUEST:
+    case actionTypes.UPDATE_ISSUE_STATUS_REQUEST:
       return {
         ...state,
         loading: true,
@@ -29,7 +29,7 @@ const IssueReducer = (state = initialState, action) => {
       };
 
     case actionTypes.FETCH_ISSUE_BY_ID_SUCCESS:
-    case actionTypes.UPDATE_ISSUE_STATE_SUCCESS:
+    case actionTypes.UPDATE_ISSUE_STATUS_SUCCESS:
       return {
         ...state,
         loading: false,

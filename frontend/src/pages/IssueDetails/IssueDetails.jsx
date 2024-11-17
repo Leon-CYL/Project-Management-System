@@ -12,11 +12,21 @@ import {
 } from "@/components/ui/select";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchIssueById, updateIssuesStatus } from "@/Redux/Issue/Action";
 
 const IssueDetails = () => {
   const { projectId, issueId } = useParams();
+  const dispatch = useDispatch();
+  const { issue } = useSelector((store) => store);
+
+  useEffect(() => {
+    dispatch(fetchIssueById(issueId));
+  }, [issueId]);
 
   const handleUpdateIssueStatus = (status) => {
+    dispatch(updateIssuesStatus({ id: issueId, status }));
     console.log(status);
   };
 
@@ -26,11 +36,13 @@ const IssueDetails = () => {
         <ScrollArea className="h-[80vh] w-[60%]">
           <div>
             <h1 className="text-lg font-semibold text-gray-400">
-              Create Navbar
+              {issue.issueDetails?.title}
             </h1>
             <div className="py-5">
-              <h2 className="font-semibold text-gray-400">description</h2>
-              <p className="text-gray-400 text-sm">This is description.</p>
+              <h2 className="font-semibold text-gray-400">Description</h2>
+              <p className="text-gray-400 text-sm">
+                {issue.issueDetails?.description}
+              </p>
             </div>
 
             <div className="mt-5 ">
@@ -62,12 +74,12 @@ const IssueDetails = () => {
         <div className="w-full lg:w-[30%] space-y-2">
           <Select onValueChange={handleUpdateIssueStatus}>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="To Do" />
+              <SelectValue placeholder="Pending" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="in_progress">In Progress</SelectItem>
-              <SelectItem value="done">Done</SelectItem>
+              <SelectItem value="Pending">Pending</SelectItem>
+              <SelectItem value="In Progress">In Progress</SelectItem>
+              <SelectItem value="Done">Done</SelectItem>
             </SelectContent>
           </Select>
 
@@ -77,12 +89,16 @@ const IssueDetails = () => {
               <div className="space-y-7">
                 <div className="flex items-center gap-10">
                   <p className="w-[7rem]">Assignee</p>
-                  <div className="flex items-center gap-3">
-                    <Avatar className="h-8 w-8 text-xs">
-                      <AvatarFallback>L</AvatarFallback>
-                    </Avatar>
-                    <p>Leon</p>
-                  </div>
+                  {issue.issueDetails?.assignee ? (
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-8 w-8 text-xs">
+                        <AvatarFallback>L</AvatarFallback>
+                      </Avatar>
+                      <p>Leon</p>
+                    </div>
+                  ) : (
+                    <p>Unassigned</p>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-10">
@@ -92,7 +108,7 @@ const IssueDetails = () => {
 
                 <div className="flex items-center gap-10">
                   <p className="w-[7rem]">Status</p>
-                  <Badge>In Progress</Badge>
+                  <Badge>{issue.issueDetails?.status}</Badge>
                 </div>
 
                 <div className="flex items-center gap-10">
