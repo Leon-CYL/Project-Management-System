@@ -130,7 +130,7 @@ const CreateProjectForm = () => {
                     <SelectContent>
                       <SelectItem value="React">React</SelectItem>
                       <SelectItem value="Angular">Angular</SelectItem>
-                      <SelectItem value="Spring boot">Spring Boot</SelectItem>
+                      <SelectItem value="Spring Boot">Spring Boot</SelectItem>
                       <SelectItem value="Flask">Flask</SelectItem>
                       <SelectItem value="Django">Django</SelectItem>
                       <SelectItem value="MySQL">MySQL</SelectItem>

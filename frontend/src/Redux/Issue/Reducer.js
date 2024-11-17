@@ -9,7 +9,7 @@ const initialState = {
 
 const IssueReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ASSIGNED_ISSUE_TO_REQUEST:
+    case actionTypes.ASSIGNED_USER_TO_ISSUE_REQUEST:
     case actionTypes.FETCH_ISSUES_REQUEST:
     case actionTypes.CREATE_ISSUE_REQUEST:
     case actionTypes.DELETE_ISSUE_REQUEST:
@@ -43,7 +43,7 @@ const IssueReducer = (state = initialState, action) => {
         issues: [...state.issues, action.issue],
       };
 
-    case actionTypes.ASSIGNED_ISSUE_TO_SUCCESS:
+    case actionTypes.ASSIGNED_USER_TO_ISSUE_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -62,7 +62,7 @@ const IssueReducer = (state = initialState, action) => {
     case actionTypes.FETCH_ISSUES_FAILURE:
     case actionTypes.CREATE_ISSUE_FAILURE:
     case actionTypes.DELETE_ISSUE_FAILURE:
-    case actionTypes.ASSIGNED_ISSUE_TO_FAILURE:
+    case actionTypes.ASSIGNED_USER_TO_ISSUE_FAILURE:
       return {
         ...state,
         loading: false,

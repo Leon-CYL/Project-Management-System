@@ -61,20 +61,20 @@ export const updateIssuesStatus = ({ id, status }) => {
   };
 };
 
-export const assignedUserToIssues = ({ issueId, userId }) => {
+export const assignedUserToIssue = ({ issueId, userId }) => {
   return async (dispatch) => {
-    dispatch({ type: actionTypes.ASSIGNED_ISSUE_TO_REQUEST });
+    dispatch({ type: actionTypes.ASSIGNED_USER_TO_ISSUE_REQUEST });
     try {
       const response = await api.put(
         `api/issues/${issueId}/assignee/${userId}`
       );
       dispatch({
-        type: actionTypes.ASSIGNED_ISSUE_TO_SUCCESS,
+        type: actionTypes.ASSIGNED_USER_TO_ISSUE_SUCCESS,
         issue: response.data,
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.ASSIGNED_ISSUE_TO_FAILURE,
+        type: actionTypes.ASSIGNED_USER_TO_ISSUE_FAILURE,
         error: error.message,
       });
       console.log(error);
