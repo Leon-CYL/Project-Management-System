@@ -38,19 +38,19 @@ const ProjectDetails = () => {
 
               <div className="space-y-5 pb-10 text-sm">
                 <p className="w-full md:max-w-lg lg:max-w-xl">
-                  This is the Project Desciption.
+                  {project.projectDetails?.description}
                 </p>
                 <div className="flex">
                   <p className="w-36">Project Lead: </p>
-                  <p>Leon</p>
+                  <p>{project.projectDetails?.owner.fullName}</p>
                 </div>
 
                 <div className="flex">
                   <p className="w-36">Members: </p>
                   <div className="flex item-center gap-2">
-                    {[1, 1, 1, 1].map((item) => (
+                    {project.projectDetails?.team.map((item) => (
                       <Avatar className="cursor-pointer" key={item}>
-                        <AvatarFallback>Z</AvatarFallback>
+                        <AvatarFallback>{item.fullName[0]}</AvatarFallback>
                       </Avatar>
                     ))}
                   </div>
@@ -77,12 +77,14 @@ const ProjectDetails = () => {
 
                 <div className="flex">
                   <p className="w-36">Category: </p>
-                  <p>Fullstack</p>
+                  <p>{project.projectDetails?.category}</p>
                 </div>
 
-                <div className="flex">
+                <div className="flex space-x-2">
                   <p className="w-36">Tags: </p>
-                  <Badge>Java</Badge>
+                  {project.projectDetails?.tags.map((item) => (
+                    <Badge>{item}</Badge>
+                  ))}
                 </div>
               </div>
 

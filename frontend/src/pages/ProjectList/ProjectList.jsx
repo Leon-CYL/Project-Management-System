@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ProjectCard from "../Project/ProjectCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProjects, searchProjects } from "@/Redux/Project/Action";

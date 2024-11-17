@@ -9,8 +9,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
-const CreateCommentForm = ({ issueId }) => {
+const CreateCommentForm = () => {
+  const dispatch = useDispatch();
   const form = useForm({
     defaultValues: {
       content: "",

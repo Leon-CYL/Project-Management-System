@@ -8,9 +8,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { createIssue } from "@/Redux/Issue/Action";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router";
 
 const CreateIssueForm = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const form = useForm({
     defaultValues: {
       issueName: "",
@@ -19,6 +24,14 @@ const CreateIssueForm = () => {
   });
 
   const onSubmit = (data) => {
+    data.projectId = id;
+    dispatch(
+      createIssue({
+        title: data.issueName,
+        description: data.description,
+        projectId: id,
+      })
+    );
     console.log("Create Invitation Data", data);
   };
 

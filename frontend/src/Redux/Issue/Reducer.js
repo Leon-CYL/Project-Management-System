@@ -56,7 +56,7 @@ const IssueReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        issues: state.issues.filter((issue) => issue.id !== action.issue.id),
+        issues: state.issues.filter((issue) => issue.id !== action.issueId),
       };
 
     case actionTypes.FETCH_ISSUES_FAILURE:
