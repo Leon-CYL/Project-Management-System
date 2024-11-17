@@ -2,14 +2,27 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { sendMessage } from "@/Redux/Chat/Action";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router";
 
 const ChatBox = () => {
   const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
+  const { auth } = useSelector((store) => store);
+  const { id } = useParams();
 
   const handleSendMessage = () => {
-    console.log("message", message);
+    dispatch(
+      sendMessage({
+        senderId: auth.user?.id,
+        projectId: id,
+        content: message,
+      })
+    );
+    setMessage("");
   };
 
   const handleMessageChange = (e) => {
