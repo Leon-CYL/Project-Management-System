@@ -21,7 +21,7 @@ public class Issue {
     private long id;
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private User assignee;
 
     @JsonIgnore
@@ -33,8 +33,6 @@ public class Issue {
     private String description;
 
     private String status;
-
-    // private Long projectId;
 
     private String priority;
 

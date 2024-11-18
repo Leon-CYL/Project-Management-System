@@ -123,17 +123,17 @@ export const inviteToProject =
   };
 
 export const acceptInvitation =
-  ({ invitationToken, navigate }) =>
+  ({ token, navigate }) =>
   async (dispatch) => {
     dispatch({ type: ACCEPT_INVITATION_REQUEST });
     try {
-      const data = await api.get("/api/projects/accept_invitation", {
+      const response = await api.get("/api/projects/accept_invitation", {
         params: {
-          token: invitationToken,
+          token,
         },
       });
-      navigate("/project" + data.projectId);
-      console.log("accept invitation", data);
+      navigate("/project/" + response.data.projectId);
+      console.log("accept invitation", response.data);
       dispatch({ type: ACCEPT_INVITATION_SUCCESS });
     } catch (error) {
       dispatch({

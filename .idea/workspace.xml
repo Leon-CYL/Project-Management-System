@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="97c4e960-a34b-4841-960b-fd0247a43692" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/SubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/controller/SubscriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/config/AppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/model/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/IssueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/service/IssueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/MessageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/SubscriptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controller/SubscriptionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/model/Issue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/IssueServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +181,7 @@
       <workItem from="1730956648307" duration="11634000" />
       <workItem from="1731112441475" duration="33550000" />
       <workItem from="1731280483531" duration="9047000" />
-      <workItem from="1731740592382" duration="23415000" />
+      <workItem from="1731740592382" duration="25868000" />
     </task>
     <servers />
   </component>

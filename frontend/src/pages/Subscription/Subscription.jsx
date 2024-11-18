@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import SubscriptionCard from "./SubscriptionCard";
 
 const freePlan = [
@@ -33,6 +34,9 @@ const annualPlan = [
 ];
 
 const Subscription = () => {
+  const userSubscription = useSelector(
+    (state) => state.subscription.userSubscription
+  );
   return (
     <div className="p-10">
       <h1 className="text-5xl font-semibold py-5 pb-16 text-center">Pricing</h1>
@@ -43,7 +47,10 @@ const Subscription = () => {
             features: freePlan,
             planType: "FREE",
             price: 0,
-            buttonName: true ? "Current Plan" : "Get Started",
+            buttonName:
+              userSubscription?.planType == "FREE"
+                ? "Current Plan"
+                : "Get Started",
           }}
         />
         <SubscriptionCard
@@ -52,7 +59,10 @@ const Subscription = () => {
             features: paidPlan,
             planType: "MONTHLY",
             price: 99,
-            buttonName: true ? "Current Plan" : "Get Started",
+            buttonName:
+              userSubscription?.planType == "MONTHLY"
+                ? "Current Plan"
+                : "Get Started",
           }}
         />
 
@@ -62,7 +72,10 @@ const Subscription = () => {
             features: annualPlan,
             planType: "ANNUALLY",
             price: 1000,
-            buttonName: true ? "Current Plan" : "Get Started",
+            buttonName:
+              userSubscription?.planType == "ANNUALLY"
+                ? "Current Plan"
+                : "Get Started",
           }}
         />
       </div>

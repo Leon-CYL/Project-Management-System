@@ -10,8 +10,6 @@ const UpgradeSuccess = () => {
     (state) => state.subscription.userSubscription
   );
 
-  console.log("Current Plan in Redux: ", userSubscription);
-
   return (
     <div className="flex justify-center">
       <Card className="mt-20 p-5 space-y-5 flex flex-col items-center">
