@@ -26,6 +26,7 @@ export const getUserSubscription = (jwt) => {
 
 export const upgradeSubscription = ({ planType }) => {
   return async (dispatch) => {
+    console.log("Upgrade Plan Type: ", planType);
     dispatch({ type: actionTypes.UPGRADE_SUBSCRIPTION_REQUEST });
     try {
       const response = await api.patch(`api/subscriptions/upgrade`, null, {
@@ -37,6 +38,7 @@ export const upgradeSubscription = ({ planType }) => {
         type: actionTypes.UPGRADE_SUBSCRIPTION_SUCCESS,
         payload: response.data,
       });
+      console.log("Payload on Upgrade Success: ", response.data);
     } catch (error) {
       dispatch({
         type: actionTypes.UPGRADE_SUBSCRIPTION_FAILURE,
