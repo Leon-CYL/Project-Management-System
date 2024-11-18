@@ -43,7 +43,6 @@ const ProjectCard = ({ item }) => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem>Update</DropdownMenuItem>
                   <DropdownMenuItem onClick={handleDelete}>
                     Delete
                   </DropdownMenuItem>

@@ -37,9 +37,6 @@ const IssueCard = ({ item, projectId }) => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>In Progress</DropdownMenuItem>
-              <DropdownMenuItem>Done</DropdownMenuItem>
-              <DropdownMenuItem>Edit</DropdownMenuItem>
               <DropdownMenuItem onClick={handleIssueDelete}>
                 Delete
               </DropdownMenuItem>
