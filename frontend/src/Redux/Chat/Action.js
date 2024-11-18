@@ -41,20 +41,20 @@ export const fetchChatByProject = (projectId) => {
   };
 };
 
-export const fetchChatMessages = (chatId) => {
+export const fetchChatMessages = (projectId) => {
   return async (dispatch) => {
+    console.log("Item: ", projectId);
     dispatch({ type: actionTypes.FETCH_CHAT_MESSAGE_REQUEST });
     try {
-      const response = await api.get(`/api/messages/chat/${chatId}`);
+      const response = await api.get(`/api/messages/chat/${projectId}`);
       console.log("Fetch Chat", response.data);
       dispatch({
-        type: actionTypes.FETCH_CHAT_BY_PROJECT_SUCCESS,
-        chatId,
+        type: actionTypes.FETCH_CHAT_MESSAGE_SUCCESS,
         messages: response.data,
       });
     } catch (error) {
       dispatch({
-        type: actionTypes.FETCH_CHAT_BY_PROJECT_FAILURE,
+        type: actionTypes.FETCH_CHAT_MESSAGE_FAILURE,
         error: error.message,
       });
       console.log(error);

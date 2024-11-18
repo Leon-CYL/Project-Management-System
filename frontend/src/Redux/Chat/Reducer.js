@@ -9,7 +9,7 @@ const initialState = {
 
 const ChatReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_MESSAGE_SUCCESS:
+    case actionTypes.FETCH_MESSAGE_REQUEST:
     case actionTypes.FETCH_CHAT_MESSAGE_REQUEST:
     case actionTypes.SEND_MESSAGE_REQUEST:
       return {
@@ -23,14 +23,17 @@ const ChatReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        messages: action.messages,
+        chat: {
+          ...state.chat,
+          messages: action.messages,
+        },
       };
 
     case actionTypes.SEND_MESSAGE_SUCCESS:
       return {
         ...state,
         loading: false,
-        messages: [...state.messages, action.messages],
+        messages: [...state.messages, action.message],
       };
 
     case actionTypes.FETCH_CHAT_BY_PROJECT_SUCCESS:
